@@ -14,8 +14,8 @@ struct species *create_subject_1()
     const int layer2_nb = 5;
     struct species *subject = (struct species*) malloc(sizeof(struct species));
     // base data of the subject
-    subject->pos_x = rand();
-    subject->pos_y = rand();
+    subject->pos_x = rand()%WORLD_WIDTH;
+    subject->pos_y = rand()%WORLD_HEIGHT;
     subject->orient = rand();
     subject->input_energy = UINT8_T_MAX;
     subject->input_captor1 = 0;

@@ -4,20 +4,10 @@
 
 #include "world.h"
 #include "species.h"
+#include "utils.h"
 
 struct species_list *species;
 struct food_list *food;
-
-
-void generate_food(struct food_list **food_list)
-{
-    struct food_list *food = (struct food_list*) malloc(sizeof(food_list));
-    food->pos_x = rand();
-    food->pos_y = rand();
-    food->next = *food_list;
-    *food_list = food;
-}
-
 
 void world_init(uint8_t species_number, uint8_t food_number)
 {
@@ -35,7 +25,11 @@ void world_init(uint8_t species_number, uint8_t food_number)
     food = NULL;
     for (i=0; i<food_number; i++)
     {
-        generate_food(&food);
+    	struct food_list *new_food = (struct food_list*) malloc(sizeof(food_list));
+    	new_food->pos_x = rand()%WORLD_WIDTH;
+    	new_food->pos_y = rand()%WORLD_HEIGHT;
+    	new_food->next = food;
+    	food = new_food;
     }
 
 }

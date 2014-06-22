@@ -1,6 +1,9 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#define WORLD_WIDTH 800
+#define WORLD_HEIGHT 600
+
 #define PI 3.14159265
 #define TWOPI 6.28318530
 
