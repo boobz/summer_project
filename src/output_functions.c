@@ -5,16 +5,16 @@
 
 void go_forward(struct species *subject)
 {
-    subject->pos_x = (int)(subject->pos_x + 100*cos(subject->orient/TWOPI)) % WORLD_WIDTH;
-    subject->pos_y = (int)(subject->pos_y + 100*sin(subject->orient/TWOPI)) % WORLD_HEIGHT;
+    subject->pos_x = (uint32_t)(subject->pos_x + 10*cos(subject->orient/TWOPI)) % WORLD_WIDTH;
+    subject->pos_y = (uint32_t)(subject->pos_y + 10*sin(subject->orient/TWOPI)) % WORLD_HEIGHT;
 }
 
 void turn_right(struct species *subject)
 {
-    subject->orient -= 10;
+    subject->orient -= 16;
 }
 
 void turn_left(struct species *subject)
 {
-    subject->orient += 10;
+    subject->orient += 16;
 }

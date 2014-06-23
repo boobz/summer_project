@@ -5,6 +5,7 @@
 #include "world.h"
 #include "species.h"
 #include "utils.h"
+#include "graphic.h"
 
 struct species_list *species;
 struct food_list *food;
@@ -62,6 +63,7 @@ void world_display()
     {
         i++;
         printf("food %d : (%d, %d)\n", i, cur_food->pos_x, cur_food->pos_y);
+	graphic_draw_circle_colored(cur_food->pos_x, cur_food->pos_y, 10, 0, 255, 0);
         cur_food = cur_food->next;
     }
 }

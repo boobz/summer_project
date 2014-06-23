@@ -1,11 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <math.h>
 
 #include "species.h"
 #include "utils.h"
 #include "output_functions.h"
 #include "input_functions.h"
+#include "graphic.h"
 
 struct species *create_subject_1()
 {
@@ -121,6 +123,11 @@ void update_subject_1(struct species *subject)
 
 void display_subject_1(struct species *subject, bool display_extended)
 {
+    graphic_draw_circle_colored(subject->pos_x, subject->pos_y, 20, 255, 0, 0);
+    uint32_t x_eye = subject->pos_x + 16*cos(subject->orient/TWOPI);
+    uint32_t y_eye = subject->pos_y + 16*sin(subject->orient/TWOPI);
+    graphic_draw_circle_colored(x_eye, y_eye, 2, 255, 255, 255);
+
     printf("(%d, %d) ,%d\n", subject->pos_x, subject->pos_y, subject->orient);
     if (display_extended) {
         printf("energy :%d\n", subject->input_energy);
