@@ -14,9 +14,9 @@ int main ( int argc, char** argv )
     // run the main loop
     int i = 0;	
     while (graphic_is_open()) {
-	//graphic_clear();
+	graphic_clear();
         world_display();
-	//graphic_display();
+	graphic_display();
 
         printf("\nworld updated\n\n");
         world_update();
