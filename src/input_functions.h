@@ -3,8 +3,7 @@
 
 #include "species.h"
 
-uint8_t captor1_function(struct species *subject);
-uint8_t captor2_function(struct species *subject);
+void captor_function_vision(struct species *subject);
 
 #endif
 
