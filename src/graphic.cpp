@@ -7,6 +7,7 @@
 
 
 static sf::RenderWindow window;
+static sf::CircleShape circle;
 
 void graphic_create(int width, int height)
 {
@@ -42,12 +43,12 @@ void graphic_draw_circle(int x, int y, int radius)
 
 void graphic_draw_circle_colored(int x, int y, int radius, int red, int green, int blue)
 {
-	sf::CircleShape c(radius);
-	c.setPosition(x, y);
-	c.setFillColor(sf::Color(red, green, blue));
-	c.setOrigin(c.getLocalBounds().width / 2,
-				c.getLocalBounds().height / 2);
-	window.draw(c);
+	circle.setRadius(radius);
+	circle.setPosition(x, y);
+	circle.setFillColor(sf::Color(red, green, blue));
+	circle.setOrigin(circle.getLocalBounds().width / 2,
+					 circle.getLocalBounds().height / 2);
+	window.draw(circle);
 }
 
 void graphic_draw_triangle_colored(int x1, int y1, int x2, int y2, int x3, int y3, int red, int green, int blue)
